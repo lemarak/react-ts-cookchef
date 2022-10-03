@@ -1,18 +1,29 @@
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Recipe.module.scss";
-import recipe from "../assets/images/recipe.jpg";
+import { IRecipe } from "../interfaces";
 
-export interface IRecipeProps {}
+type IRecipeProps = {
+  recipe: IRecipe;
+};
 
-function Recipe(props: IRecipeProps) {
+function Recipe({ recipe }: IRecipeProps): JSX.Element {
+  const [liked, setLiked] = useState(false);
+
   return (
     <div className={styles.recipe}>
       <div className={styles.imageContainer}>
-        <img src={recipe} alt="recipe" />
+        <img src={recipe.image} alt="recipe" />
       </div>
       <div
         className={`${styles.recipeTitle} d-flex flex-row justify-content-center align-items-center`}
       >
-        <h3>Saumon et asperges</h3>
+        <h3 className="mr-5" onClick={() => setLiked(!liked)}>
+          {recipe.title}
+        </h3>
+
+        {liked && <FontAwesomeIcon icon={faHeart} />}
       </div>
     </div>
   );
