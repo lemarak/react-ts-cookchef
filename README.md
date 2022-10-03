@@ -1,3 +1,7 @@
+# React with TypeScript made with :
+
+[typescript and react](https://github.com/typescript-cheatsheets/react#reacttypescript-cheatsheets)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

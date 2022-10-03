@@ -1,10 +1,14 @@
+import styles from "./Footer.module.scss";
+
 export interface IFooterProps {}
 
 function Footer(props: IFooterProps) {
   return (
-    <div className="b3">
-      <h2>Footer</h2>
-    </div>
+    <footer
+      className={`${styles.footer} d-flex flex-row align-items-center justify-content-center`}
+    >
+      <p>Copyright © 2022 Cookchef Dyma, Inc.</p>
+    </footer>
   );
 }
 
